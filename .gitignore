@@ -1,0 +1,14 @@
+# Datasets y outputs por personaje (activos pesados, no versionados)
+characters/*/datasets/*
+!characters/*/datasets/.gitkeep
+characters/*/outputs/*
+!characters/*/outputs/.gitkeep
+
+# Python
+__pycache__/
+.venv/
+
+# Modelos / checkpoints
+*.safetensors
+*.ckpt
+*.onnx
