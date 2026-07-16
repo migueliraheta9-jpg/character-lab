@@ -47,6 +47,7 @@ Template base: imagen Docker de ComfyUI actualizada del marketplace de Vast
 
 - [ ] Canon de Astrid firmado
 - [ ] Canon de Valeria firmado
-- [ ] Licencia comercial FLUX.2 verificada (si es restrictiva → Qwen-Image 2.0
+- [x] Licencia comercial FLUX.2 verificada (si es restrictiva → Qwen-Image 2.0
       asume también la línea realista)
+      Resuelto 2026-07: fase de laboratorio permitida bajo licencia no comercial de FLUX.2 dev (testing/evaluación). Producción comercial requiere tier BFL, API licenciada, o migrar la línea realista a Qwen-Image 2.0 (Apache 2.0). LoRAs entrenados sobre FLUX.2 dev heredan licencia no comercial.
 - [ ] Repo subido a GitHub (privado)
