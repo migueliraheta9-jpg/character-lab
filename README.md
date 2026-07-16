@@ -47,6 +47,7 @@ la fase de producción (o el LoRA, si el volumen lo justifica).
 
 ## Convenciones
 
+- **Todo personaje nuevo nace por `forge/new_character.py`, nunca a mano.**
 - **Prompts en inglés** (los modelos rinden mejor); documentación en español.
 - **1 cabello canónico por personaje** durante todo el laboratorio.
   Variaciones de peinado solo después de pasar Gate 2.
@@ -66,6 +67,12 @@ character-lab/
 ├── characters/
 │   ├── astrid/    (CHARACTER.md + anchors/ + datasets/ + outputs/)
 │   └── valeria/   (CHARACTER.md + anchors/ + datasets/ + outputs/)
+├── forge/         # Taller de creación de personajes (ver forge/GUIA_CREACION.md)
+│   ├── GUIA_CREACION.md
+│   ├── cuestionario.md
+│   ├── registry.json
+│   ├── templates/  (CHARACTER_TEMPLATE.md + prompts_{realista,anime,otros}.md)
+│   └── new_character.py
 ├── workflows/     # JSONs de ComfyUI (se agregan al montar la instancia)
 ├── validation/    # identity_check.py + requirements.txt
 └── infra/         # vast-setup.md
