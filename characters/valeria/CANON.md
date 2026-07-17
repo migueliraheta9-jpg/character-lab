@@ -70,6 +70,25 @@ portrait outdoors at golden hour, warm sunlight on her face, soft
 long shadows, casual beige knit top, natural background softly
 blurred, 85mm lens look.
 
+## Canon corporal (v1, Sesión 2 — congelado)
+Height around 168 cm, fit hourglass figure built by regular strength
+training: defined narrow waist, softly muscular shoulders and toned
+arms, flat toned stomach, round firm glutes, strong athletic thighs
+and calves, natural medium-full bust proportional to her frame,
+warm tan skin with an even healthy glow, upright confident posture.
+(Este bloque en inglés se pega íntegro en todo prompt de cuerpo
+entero o medio cuerpo, junto al candado facial.)
+
+## Corrección importante (S2)
+Se descubrió que en S1 y en el set de expresiones de S2 la cadena de
+referencia (ReferenceLatent) estuvo en bypass: la imagen héroe NUNCA
+se inyectó realmente. La consistencia ~90% proviene del candado de
+prompt + seed fija (794808565046336), que queda validado como
+mecanismo principal de identidad. La inyección real de referencia
+produjo imágenes negras (sospecha: presión de VRAM con Q6_K); queda
+como experimento controlado pendiente: escalar referencia a 0.5 MP o
+usar Q5_K_M.
+
 ## Notas de sesión
 - A4 requirió 2 corridas: la primera salió con figura incorrecta.
   Lección: el cuerpo no está anclado por la referencia
@@ -78,3 +97,6 @@ blurred, 85mm lens look.
 - La cara en cuerpo entero a 1024px pierde detalle de marcadores.
   TODO fase 2: pase de face detailer + upscale para planos abiertos.
 - Gate 1: APROBADO (~90% consistencia de identidad en 4 vistas).
+- Set de expresiones E1-E4 aprobado (pecas se atenúan con risa
+  abierta: esperado); anchor corporal generado según canon congelado;
+  dataset LoRA acumulado: 10 imágenes.

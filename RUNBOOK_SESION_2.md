@@ -30,3 +30,15 @@ duro $10. Qwen-2512: solo si sobra presupuesto, no es crítico.
 ## Roadmap posterior
 Sesión 3: LoRA de identidad (dataset ~12-15 imágenes de S1+S2) →
 abre producción en volumen y video (LTX). Astrid: después de Gate 2.
+
+## Estado (parcial, 2026-07-17)
+Completado: bloques 1 y 2 (cuerpo canónico + set expresiones).
+Pendiente para próxima sesión GPU: probar detailer_standalone_v1.json
+(bloque 3), escenas C1-C3 y veredicto Gate 2 (bloque 4).
+
+Infra: instancia de 412 MiB/s validada con filtro de red; setup
+completo en ~10 min con Bloque B; SAM se descarga del mirror HF
+segments-arnaud/sam_vit_b (Meta bloquea datacenters). Workflow
+monolítico con detailer integrado: descartado (imágenes negras);
+arquitectura definitiva: generación (s2) + detailer standalone como
+post-proceso.
