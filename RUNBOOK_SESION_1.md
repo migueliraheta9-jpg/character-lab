@@ -113,3 +113,28 @@ checklist. PASS → `anchors/` y commit.
 **Regla de oro de la sesión:** cada problema se corrige en el prompt o el
 workflow, nunca tirando seeds al azar. Si en 3 intentos dirigidos no sale,
 se anota y se consulta — el laboratorio mide al pipeline, no a la suerte.
+
+## Lecciones Sesión 1 (ejecutada 2026-07-16)
+
+- Filtro obligatorio al rentar en Vast: Internet Down ≥500 Mbps
+  (además de: 1x RTX 5090 verified, ≤$0.60/hr, reliability ≥99%,
+  disco 150 GB antes de rentar).
+- Paso 0 en toda instancia nueva: test de red con aria2 -x16
+  contra Hugging Face (archivo VAE ~300MB). Veredicto: ≥30 MiB/s
+  verde; 15–30 aceptable; <15 Destroy. El curl de una sola
+  conexión solo sirve para descartar limones absolutos (muchos
+  hosts capan por stream, no en total).
+- No usar speed.cloudflare.com como test: devuelve 403 desde IPs
+  de datacenter.
+- Descargas siempre con aria2c -x16 -s16 -c
+  --auto-file-renaming=false --allow-overwrite=true (evita
+  duplicados .1.gguf sobre parciales de wget).
+- Nunca pegar comandos en una terminal con un proceso en primer
+  plano: se encolan y se ejecutan en cadena. Descarga larga =
+  terminal dedicada.
+- Qwen-Image 2.0 NO tiene pesos abiertos (feb 2026, solo API
+  BaiLian). Sustituto canónico: Qwen-Image-2512 Q8_0 GGUF
+  (unsloth) — descargado en S1, quedó sin usar. Pendiente
+  evaluarlo en Sesión 2.
+- Se destruyeron 2 instancias por red mala antes de la buena;
+  costo total de sesión ~$2 de $10.
