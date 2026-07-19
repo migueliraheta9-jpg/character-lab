@@ -54,3 +54,10 @@ post-proceso.
 - Gate 2 formalmente PENDIENTE hasta re-refinar las escenas.
 - WF3 unificado creado; estreno con prueba controlada en S3
   (fallback: Ctrl+B al grupo detailer o los 2 workflows probados).
+
+## S3 pendientes
+- Verificar tooling de entrenamiento LoRA sobre FLUX.2-dev vs Klein
+  9B con datos frescos.
+- Verificar términos de licencia BFL para uso comercial de outputs.
+- Atributos de Civitai: ecosistema maduro solo en Klein; re-evaluar
+  en S4.
