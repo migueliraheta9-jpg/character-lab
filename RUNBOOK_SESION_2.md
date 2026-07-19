@@ -42,3 +42,15 @@ segments-arnaud/sam_vit_b (Meta bloquea datacenters). Workflow
 monolítico con detailer integrado: descartado (imágenes negras);
 arquitectura definitiva: generación (s2) + detailer standalone como
 post-proceso.
+
+## Lecciones
+- El zip de cierre se hace ANTES de cualquier otro paso final y se
+  verifica el conteo en PC antes del Destroy: las descargas
+  individuales desde Jupyter se atascan en ráfagas. Siempre bajar
+  zip único (`zip -r valeria_sN.zip valeria/`).
+- 9 refinadas (detail 00005-00013) se perdieron con el Destroy:
+  re-generarlas es el primer bloque de S3 (las bases están a salvo y
+  el proceso es reproducible).
+- Gate 2 formalmente PENDIENTE hasta re-refinar las escenas.
+- WF3 unificado creado; estreno con prueba controlada en S3
+  (fallback: Ctrl+B al grupo detailer o los 2 workflows probados).

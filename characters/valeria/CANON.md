@@ -89,6 +89,14 @@ produjo imágenes negras (sospecha: presión de VRAM con Q6_K); queda
 como experimento controlado pendiente: escalar referencia a 0.5 MP o
 usar Q5_K_M.
 
+## Convención de nombrado de producción (v1)
+Prefijo del nodo Guardar Imagen:
+`valeria/sN/<categoria>/<etiqueta>`
+Categorías válidas: `anchors`, `expresiones`, `gym`, `escenas`, `boudoir`.
+Solo minúsculas y guiones bajos, sin espacios, acentos ni backslashes.
+La versión detail lleva sufijo `_detail`.
+Zip de cierre: `zip -r valeria_sN.zip valeria/`
+
 ## Notas de sesión
 - A4 requirió 2 corridas: la primera salió con figura incorrecta.
   Lección: el cuerpo no está anclado por la referencia

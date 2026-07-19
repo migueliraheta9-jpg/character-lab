@@ -104,6 +104,9 @@ wget -q -O "$COMFY/user/default/workflows/flux2_gguf_valeria.json" \
 [ -f "$REPO/detailer_standalone_v1.json" ] && \
   cp "$REPO/detailer_standalone_v1.json" "$COMFY/user/default/workflows/" && \
   echo "Detailer standalone instalado."
+[ -f "$REPO/wf3_unificado_valeria_v1.json" ] && \
+  cp "$REPO/wf3_unificado_valeria_v1.json" "$COMFY/user/default/workflows/" && \
+  echo "WF3 unificado instalado."
 if [ -d "$REPO/characters/valeria/anchors" ]; then
   cp "$REPO/characters/valeria/anchors/"*.png "$COMFY/input/" 2>/dev/null && \
   echo "Anchors de Valeria copiados a input/ (disponibles como referencia)."
