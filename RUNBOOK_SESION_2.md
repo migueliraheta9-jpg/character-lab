@@ -61,3 +61,29 @@ post-proceso.
 - Verificar términos de licencia BFL para uso comercial de outputs.
 - Atributos de Civitai: ecosistema maduro solo en Klein; re-evaluar
   en S4.
+
+## Hallazgos externos (2026-07-19) — track de realismo y motor secundario
+
+Fuente evaluada: workflow "Flux.2 Klein + Refiner v2.0" (Civitai,
+ShinobiSat). El archivo NO se adopta (motor Klein 9B incompatible con
+nuestro dev-32B, e ingeniería frágil). Se extraen dos ideas validadas
+por su comunidad (34 reseñas positivas):
+
+1. EXPERIMENTO S4 — Pulido global SDXL: pase de KSampler con checkpoint
+   SDXL-DMD a denoise muy bajo (0.15-0.25) DESPUÉS del FaceDetailer,
+   como etapa opcional apagable (patrón Ctrl+B). Objetivo: textura de
+   piel y grano fotográfico que ataquen el acabado "irreal/editorial".
+   Costo: ~6GB extra al bootstrap (checkpoint SDXL DMD). Riesgo a
+   vigilar: deriva de identidad facial — por eso va DESPUÉS del
+   detailer y a denoise mínimo. Condición: solo tras medir línea base
+   del LoRA (S3), para saber qué aporta cada pieza.
+
+2. DATO PARA EVALUACIÓN KLEIN (S3/S4): Klein 9B genera en 20-30 seg
+   por imagen (reporte de comunidad), ~3-5x más rápido que dev-32B.
+   Refuerza la arquitectura candidata de dos motores: dev-32B para
+   calidad (anchors, campañas) + Klein para volumen (contenido diario),
+   donde además vive el ecosistema maduro de LoRAs de atributo.
+
+3. Recordatorio reforzado: la página exhibe licencia BFL no-comercial —
+   la tarea S3 de verificar términos de uso comercial de outputs es
+   bloqueante antes de monetizar.
